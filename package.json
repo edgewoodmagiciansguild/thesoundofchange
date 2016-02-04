@@ -1,0 +1,19 @@
+{
+  "name": "thesoundofchange",
+  "version": "1.0.0",
+  "description": "Software for The Sound of Change project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kurt Roberts",
+  "license": "MIT",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-gunzip": "0.0.3",
+    "gulp-untar": "0.0.4",
+    "gulp-util": "^3.0.7",
+    "vinyl-ftp": "^0.4.5"
+  }
+}

@@ -1,0 +1,20 @@
+<positions>
+    <element name="curves">
+        <x>0.000000000</x>
+        <y>142.000000000</y>
+        <width>1300.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="curves_0">
+        <x>0.000000000</x>
+        <y>206.000000000</y>
+        <width>1300.000000000</width>
+        <height>40.000000000</height>
+    </element>
+    <element name="curves_1">
+        <x>0.000000000</x>
+        <y>270.000000000</y>
+        <width>1300.000000000</width>
+        <height>40.000000000</height>
+    </element>
+</positions>
