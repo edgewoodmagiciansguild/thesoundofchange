@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Software for The Sound of Change project",
   "main": "index.js",
+  "repository": "https://github.com/edgewoodmagiciansguild/thesoundofchange.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
