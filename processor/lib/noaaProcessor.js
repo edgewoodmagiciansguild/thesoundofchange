@@ -25,10 +25,6 @@ var noaaXmlProcessor = _.bindAll({
 
 		self.log('init');
 
-		app.on('noaa:data', function (station, data) {
-			console.log({station: station, data: data});
-		});
-
 		self.processStations(path.join(self.path, self.stationFile)).then(function (stations) {
 			self.stations = stations;
 
