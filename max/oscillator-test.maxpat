@@ -38,13 +38,22 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"extract" : 1,
+					"id" : "obj-4",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "bp.Recordr.maxpat",
+					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 186.0, 60.0, 34.0, 22.0 ],
-					"style" : "",
-					"text" : "print"
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 613.0, 387.0, 372.0, 116.0 ],
+					"varname" : "bp.Recordr",
+					"viewvisibility" : 1
 				}
 
 			}
@@ -847,7 +856,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2875.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1014.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -1397,7 +1406,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2875.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1516.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -1947,7 +1956,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2875.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 2648.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -2497,7 +2506,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 1429.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 3674.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -3047,7 +3056,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2952.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1238.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -3597,7 +3606,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 1120.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 2984.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -4147,7 +4156,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 3695.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1009.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -4697,7 +4706,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2875.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1489.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -5247,7 +5256,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2875.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1469.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -5797,7 +5806,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2875.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1762.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -6347,7 +6356,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2875.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1462.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -6897,7 +6906,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2521.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1876.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -7447,7 +7456,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2807.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 3627.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -7997,7 +8006,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 1454.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 3783.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -8348,7 +8357,7 @@
 					"outlettype" : [ "signal", "signal", "list" ],
 					"patching_rect" : [ 330.0, 286.0, 176.5, 22.0 ],
 					"style" : "",
-					"text" : "matrix~ 16 2 2."
+					"text" : "matrix~ 16 2 1."
 				}
 
 			}
@@ -8627,7 +8636,7 @@
 									"outlettype" : [ "list", "float", "float", "float", "float", "list", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 153.0, 219.0, 256.0, 128.0 ],
-									"setfilter" : [ 0, 5, 1, 0, 0, 2583.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
+									"setfilter" : [ 0, 5, 1, 0, 0, 1071.0, 12.0, 1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -9166,6 +9175,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-4", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-29", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -9454,15 +9481,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-6", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -9471,7 +9489,22 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-4::obj-7" : [ "AutoName", "AutoName", 0 ],
+			"obj-4::obj-76" : [ "Record", "Record", 0 ],
+			"obj-4::obj-77" : [ "getsamplelength", "getsamplelength", 0 ],
+			"obj-4::obj-74" : [ "Channels", "Channels", 0 ],
+			"obj-4::obj-73" : [ "Format", "Format", 0 ],
+			"obj-4::obj-52" : [ "Level", "Level", 0 ]
+		}
+,
 		"dependency_cache" : [ 			{
+				"name" : "bp.Recordr.maxpat",
+				"bootpath" : "C74:/packages/BEAP/clippings/BEAP/Output",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "OSC-route.mxo",
 				"type" : "iLaX"
 			}

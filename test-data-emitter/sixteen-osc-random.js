@@ -7,7 +7,7 @@ var osc = require('osc'),
 		remotePort: 5000
 	},
 	oscPort = new osc.UDPPort(config),
-	oscList = _.range(0,8);
+	oscList = _.range(0, 15),
 	transmit = function (oscillator, pitch, cutoff, delay) {
 		var address = '/osc' + oscillator + '/';
 		oscPort.send({
@@ -32,8 +32,7 @@ oscPort.open();
 
 setInterval(function () {
 	oscList.forEach(function (x) {
-		//this sucks, because all 3 random numbers will be the same
-		transmit(x, Math.random(), Math.random(), Math.random());
+		transmit(x.toString(16).toUpperCase(), Math.random(), Math.random(), Math.random());
 	});
 }, 60);
 
