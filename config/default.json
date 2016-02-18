@@ -1,0 +1,6 @@
+{
+	"debug": true,
+	"noaa": {
+		"dataDir": "./data/data/ghcnd_gsn"
+	}
+}
