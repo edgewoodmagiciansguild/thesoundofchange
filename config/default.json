@@ -1,6 +1,11 @@
 {
+	"name": "weatherProcessor",
 	"debug": true,
 	"noaa": {
-		"dataDir": "./data/data/ghcnd_gsn"
+		"dataDir": "./data/"
+	},
+	"udpEmitter": {
+		"host": "localhost",
+		"port": 5000
 	}
 }
