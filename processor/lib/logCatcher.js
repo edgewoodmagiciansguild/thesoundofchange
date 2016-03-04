@@ -19,7 +19,7 @@ var logCatcher = _.bindAll({
 	},
 
 	catchData: function (station, data) {
-		this.log({ station: station, data: data });
+		//this.log({ station: station, data: data });
 	}
 
 });

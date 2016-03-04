@@ -15,7 +15,7 @@ var udpCatcher = _.bindAll({
 
 		self.log('init');
 
-		app.on('noaa:data', self.catchData);
+		app.on('udp:data', self.catchData);
 	},
 
 	catchData: function (station, data) {

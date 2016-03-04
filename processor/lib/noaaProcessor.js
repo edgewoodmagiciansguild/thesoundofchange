@@ -28,14 +28,15 @@ var noaaXmlProcessor = _.bindAll({
 		self.processStations(path.join(self.path, self.stationFile)).then(function (stations) {
 			self.stations = stations;
 
-			//console.log(stations);
-
 			self.processPath(path.join(self.path, self.dailyPath), function (file) {
 				return self.pattern.test(file);
 			}, function (fileQueue) {
 				self.files = fileQueue;
 
-				self.processFiles();
+				self.processFiles().then(function () {
+					self.log('done');
+					app.emit('noaa:done');
+				});
 			});
 		});
 	},
@@ -60,6 +61,7 @@ var noaaXmlProcessor = _.bindAll({
 
 				if (parts.length > 0) {
 					stations[parts[0]] = {};
+					stations[parts[0]].id = parts[0];
 
 					if (parts.length >= 2) {
 						stations[parts[0]].lat = parts[1];
@@ -130,31 +132,49 @@ var noaaXmlProcessor = _.bindAll({
 				lastId = null;
 
 			reader.on('line', function (line) {
-				line = line.replace(/\s{2,}/g, ' ');
-				line = line.replace(/(\w)(\-)([0-9])/g, '$1 -$3')
+				var station = line.substr(0, 11),
+					year = line.substr(11, 4),
+					month = line.substr(15, 2),
+					type = line.substr(17, 4),
+					id = year + '-' + month,
+					date = new Date(parseInt(year), parseInt(month) - 1),
+					days = [];
 
-				var parts = line.trim().split(/\s/);
-				if (parts.length > 0) {
-					var station = parts[0].substr(0, 11),
-						year = parts[0].substr(11, 4),
-						month = parts[0].substr(15, 2),
-						type = parts[0].substr(17, 4),
-						id = year + '-' + month,
-						date = new Date(parseInt(year), parseInt(month) - 1);
-
-					if (lastId == null || lastId != id) {
-						if (lastId != id) {
-							app.emit('noaa:data', self.stations[station], data);
-						}
-
-						lastId = id;
-						data = {};
-						data[id] = {};
-						data[id].date = date;
+				if (lastId == null || lastId != id) {
+					if (lastId != id && lastId != null) {
+						app.emit('noaa:data', self.stations[station], data);
 					}
 
-					data[id][type] = parts.splice(1, parts.length - 1);
+					lastId = id;
+					data = {};
+					data.id = id;
+					data.date = date;
 				}
+
+				for (var offset = 21; offset < line.length; offset += 8) {
+					var dayData = line.substr(offset, 8),
+						val = parseInt(dayData.substr(0, 5)),
+						measure = dayData.substr(5, 1),
+						quality = dayData.substr(6, 1)
+						source = dayData.substr(7, 1);
+
+					if (val === -9999) {
+						val = NaN;
+					}
+
+					days.push({
+						value: val,
+						measure: (measure === ' ' ? null : measure),
+						quality: (quality === ' ' ? null : quality),
+						source: (source === ' ' ? null : source)
+					});
+				}
+
+				data[type] = days;
+			});
+
+			reader.on('close', function () {
+				resolve();
 			});
 		});
 	}
