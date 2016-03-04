@@ -8,24 +8,24 @@ var osc = require('osc'),
 	},
 	oscPort = new osc.UDPPort(config),
 	oscList = _.range(0, 31),
-	transmit = function (oscillator, pitch, cutoff, delay) {
+	transmit = function (oscillator, temp, precip, snowdepth) {
 		oscPort.send({
 			address: '/osc',
-			args: [oscillator, pitch, cutoff, delay]
+			args: [oscillator, temp, precip, snowdepth]
 		});
 	},
 	lfo = function* (rate, multiplier, offset) {
 		var x = 1;
 		while (true) {
-			yield (multiplier * Math.sin(x)) + offset;
+			yield ((multiplier * Math.sin(x)) + offset) | 0;
 			x = x + (x * rate);
 			if (x > 5)
 				x = 1;
 		}
 	},
-	pitch = [],
-	cutoff = [],
-	delay = [];
+	temp = [],
+	precip = [],
+	snowdepth = [];
 
 oscPort.on('message', function (oscMsg) {
     console.log('An OSC message just arrived!', oscMsg);
@@ -34,15 +34,15 @@ oscPort.on('message', function (oscMsg) {
 oscPort.open();
 
 oscList.forEach(function (x) {
-	pitch.push(lfo(.01 * x, 1, 0));
-	cutoff.push(lfo(.001, .5, .25));
-	delay.push(lfo(.25, 1, 0));
+	temp.push(lfo(.001 * x, 750, -162.5));
+	precip.push(lfo(.001, 9125, 9125));
+	snowdepth.push(lfo(.001, 5910, 5910));
 });
 
 
 setInterval(function () {
 	oscList.forEach(function (x) {
-		transmit(x, pitch[x].next().value, cutoff[x].next().value, delay[x].next().value);
+		transmit(x, temp[x].next().value, precip[x].next().value, snowdepth[x].next().value);
 	});
 }, 20);
 
