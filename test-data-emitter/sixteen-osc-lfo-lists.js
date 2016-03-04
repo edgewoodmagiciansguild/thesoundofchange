@@ -19,7 +19,7 @@ var osc = require('osc'),
 		while (true) {
 			yield ((multiplier * Math.sin(x)) + offset) | 0;
 			x = x + (x * rate);
-			if (x > 5)
+			if (x > (Math.PI + 1))
 				x = 1;
 		}
 	},
@@ -34,9 +34,9 @@ oscPort.on('message', function (oscMsg) {
 oscPort.open();
 
 oscList.forEach(function (x) {
-	temp.push(lfo(.001 * x, 750, -162.5));
-	precip.push(lfo(.001, 9125, 9125));
-	snowdepth.push(lfo(.001, 5910, 5910));
+	temp.push(lfo(.004 * x, 750, -162.5));
+	precip.push(lfo(.003, 9125, 9125));
+	snowdepth.push(lfo(.002, 5910, 5910));
 });
 
 
