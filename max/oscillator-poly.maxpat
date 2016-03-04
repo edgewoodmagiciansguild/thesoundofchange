@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 620.0, 156.0, 111.0, 22.0 ],
 					"style" : "",
-					"text" : "scale 0 11820 0. 1."
+					"text" : "scale 0 11820 1. 0."
 				}
 
 			}
@@ -69,9 +69,9 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 447.0, 67.0, 116.0, 22.0 ],
+					"patching_rect" : [ 447.0, 67.0, 156.0, 22.0 ],
 					"style" : "",
-					"text" : "scale -900 600 0. 1."
+					"text" : "scale -900 600 0. 1. 1.0025"
 				}
 
 			}
@@ -107,10 +107,10 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 475.0, 233.0, 246.0, 22.0 ],
+					"patching_rect" : [ 474.0, 233.0, 246.0, 22.0 ],
 					"style" : "",
 					"text" : "poly~ oscillator-rect-filter-noise 40 @target 0"
 				}
@@ -155,11 +155,11 @@
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 4,
-					"outlettype" : [ "int", "float", "float", "float" ],
-					"patching_rect" : [ 126.0, 105.0, 75.0, 22.0 ],
+					"numoutlets" : 5,
+					"outlettype" : [ "int", "float", "float", "float", "int" ],
+					"patching_rect" : [ 126.0, 105.0, 81.0, 22.0 ],
 					"style" : "",
-					"text" : "unpack i f f f"
+					"text" : "unpack i f f f i"
 				}
 
 			}
@@ -279,6 +279,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 3 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -371,8 +380,8 @@
 		"parameters" : 		{
 			"obj-9::obj-7" : [ "AutoName", "AutoName", 0 ],
 			"obj-9::obj-74" : [ "Channels", "Channels", 0 ],
-			"obj-9::obj-76" : [ "Record", "Record", 0 ],
 			"obj-9::obj-73" : [ "Format", "Format", 0 ],
+			"obj-9::obj-76" : [ "Record", "Record", 0 ],
 			"obj-9::obj-77" : [ "getsamplelength", "getsamplelength", 0 ],
 			"obj-9::obj-52" : [ "Level", "Level", 0 ]
 		}
