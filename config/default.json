@@ -5,7 +5,11 @@
 		"dataDir": "./data/"
 	},
 	"udpEmitter": {
-		"host": "localhost",
+		"host": "10.1.1.63",
 		"port": 5000
+	},
+	"oscCatcher": {
+		"delay": 100,
+		"channels": 150
 	}
 }

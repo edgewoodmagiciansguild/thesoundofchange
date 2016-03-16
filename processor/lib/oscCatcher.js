@@ -9,11 +9,10 @@ var oscCatcher = _.bindAll({
 
 	oscChannels: {},
 	playStack: [],
-	channels: 16,
+	channels: app.config.oscCatcher.channels,
 	playInterval: null,
-	sampleLen: 60,
 	oscPort: null,
-	delay: 20,
+	delay: app.config.oscCatcher.delay,
 
 	init: function() {
 		var self = this;
@@ -27,8 +26,8 @@ var oscCatcher = _.bindAll({
 		var config = {
 			localAddress: '0.0.0.0',
 			localPort: 5001,
-			remoteAddress: '10.1.1.63',
-			remotePort: 5000
+			remoteAddress: app.config.udpEmitter.host,
+			remotePort: app.config.udpEmitter.port
 		};
 
 		self.oscPort = new osc.UDPPort(config);
