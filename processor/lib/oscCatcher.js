@@ -14,6 +14,8 @@ var oscCatcher = _.bindAll({
 	oscPort: null,
 	delay: app.config.oscCatcher.delay,
 
+	lastYear: null,
+
 	init: function() {
 		var self = this;
 
@@ -129,7 +131,9 @@ var oscCatcher = _.bindAll({
 
 					if (data !== undefined) {
 						for (i in data) {
-							var val = null;
+							var val = null,
+								year = data[i].day.split('-')[0]; // not very defensive, but heck with it...
+
 							if (data[i].TAVG !== undefined) {
 								val = data[i].TAVG.value;
 							} else if (data[i].TMIN !== undefined && data[i].TMAX) {
@@ -137,9 +141,9 @@ var oscCatcher = _.bindAll({
 							}
 
 							if (val != null) {
-								self.transmit(id, val, 0, 0, 0);
+								self.transmit(id, val, 0, 0, 0, year);
 							} else {
-								self.transmit(id, 0, 0, 0, 1);
+								self.transmit(id, 0, 0, 0, 1, year);
 							}
 
 							id++;
@@ -158,12 +162,21 @@ var oscCatcher = _.bindAll({
 		}
 	},
 
-	transmit: function (oscillator, temp, precip, snowdepth, mute) {
-		console.log(oscillator + ' ' + temp);
-		this.oscPort.send({
-			address: '/osc',
-			args: [oscillator, temp, precip, snowdepth, mute]
-		});
+	transmit: function (oscillator, temp, precip, snowdepth, mute, year) {
+		if (year !== undefined) {
+			if (year !== this.lastYear) {
+				this.lastYear = year;
+				console.log('new year');
+			} else {
+				delete year;
+			}
+
+			console.log(year + ': ' + oscillator + ' ' + temp);
+			this.oscPort.send({
+				address: '/osc',
+				args: [oscillator, temp, precip, snowdepth, mute, year]
+			});
+		}
 	},
 
 });
