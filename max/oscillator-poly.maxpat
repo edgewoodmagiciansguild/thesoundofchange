@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 2,
-			"revision" : 1,
+			"revision" : 0,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 638.0, 639.0, 914.0, 564.0 ],
+		"rect" : [ 250.0, 89.0, 914.0, 564.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,31 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 272.0, 459.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 272.0, 426.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-19",
 					"maxclass" : "message",
@@ -70,7 +95,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 77.0, 246.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "\"2016\""
+					"text" : "1836."
 				}
 
 			}
@@ -192,10 +217,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 6,
-					"outlettype" : [ "int", "float", "float", "float", "int", "" ],
-					"patching_rect" : [ 126.0, 105.0, 91.0, 22.0 ],
+					"outlettype" : [ "int", "float", "float", "float", "int", "int" ],
+					"patching_rect" : [ 126.0, 105.0, 87.0, 22.0 ],
 					"style" : "",
-					"text" : "unpack i f f f i s"
+					"text" : "unpack i f f f i i"
 				}
 
 			}
@@ -204,11 +229,11 @@
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 126.0, 68.0, 93.0, 22.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 126.0, 68.0, 123.0, 22.0 ],
 					"style" : "",
-					"text" : "OSC-route /osc"
+					"text" : "OSC-route /osc /year"
 				}
 
 			}
@@ -231,7 +256,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 188.0, 419.0, 45.0, 45.0 ],
+					"patching_rect" : [ 798.0, 426.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -302,6 +327,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-20", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -324,6 +367,24 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-19", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 1 ]
 				}
 
 			}
@@ -356,15 +417,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 1 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-5", 5 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-12", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -387,15 +439,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-5", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-5", 5 ]
 				}
 
 			}
@@ -437,12 +480,12 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-9::obj-77" : [ "getsamplelength", "getsamplelength", 0 ],
-			"obj-9::obj-52" : [ "Level", "Level", 0 ],
 			"obj-9::obj-7" : [ "AutoName", "AutoName", 0 ],
+			"obj-9::obj-52" : [ "Level", "Level", 0 ],
 			"obj-9::obj-74" : [ "Channels", "Channels", 0 ],
 			"obj-9::obj-73" : [ "Format", "Format", 0 ],
-			"obj-9::obj-76" : [ "Record", "Record", 0 ]
+			"obj-9::obj-76" : [ "Record", "Record", 0 ],
+			"obj-9::obj-77" : [ "getsamplelength", "getsamplelength", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -453,7 +496,7 @@
 			}
 , 			{
 				"name" : "oscillator-rect-filter-noise.maxpat",
-				"bootpath" : "~/Desktop/edgewoodmagiciansguild/thesoundofchange/max/externals",
+				"bootpath" : "~/Desktop/edgewoodmagicicansguild/thesoundofchange/max/externals",
 				"type" : "JSON",
 				"implicit" : 1
 			}

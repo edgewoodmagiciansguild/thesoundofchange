@@ -132,7 +132,7 @@ var oscCatcher = _.bindAll({
 					if (data !== undefined) {
 						for (i in data) {
 							var val = null,
-								year = data[i].day.split('-')[0]; // not very defensive, but heck with it...
+								year = data[i].day.split('-')[0] | 0; // not very defensive, but heck with it...
 
 							if (data[i].TAVG !== undefined) {
 								val = data[i].TAVG.value;
@@ -166,7 +166,10 @@ var oscCatcher = _.bindAll({
 		if (year !== undefined) {
 			if (year !== this.lastYear) {
 				this.lastYear = year;
-				console.log('new year');
+				this.oscPort.send({
+					address: '/year',
+					args: [year]
+				});
 			} else {
 				delete year;
 			}
@@ -174,7 +177,7 @@ var oscCatcher = _.bindAll({
 			console.log(year + ': ' + oscillator + ' ' + temp);
 			this.oscPort.send({
 				address: '/osc',
-				args: [oscillator, temp, precip, snowdepth, mute, year]
+				args: [oscillator, temp, precip, snowdepth, mute]
 			});
 		}
 	},
