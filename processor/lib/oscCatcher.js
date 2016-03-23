@@ -132,7 +132,7 @@ var oscCatcher = _.bindAll({
 					if (data !== undefined) {
 						for (i in data) {
 							var val = null,
-								year = data[i].day.split('-')[0] | 0; // not very defensive, but heck with it...
+								year = data[i].day.split('-')[0] | 0; // not very defensive, but heck with it... KPR: needed an int, osc was sending a string without the cast
 
 							if (data[i].TAVG !== undefined) {
 								val = data[i].TAVG.value;
@@ -149,9 +149,17 @@ var oscCatcher = _.bindAll({
 							id++;
 						}
 
+						console.log(Object.keys(data).length);
+
+						self.oscPort.send({
+							address: '/activeVoices',
+							args: [Object.keys(data).length]
+						});
+						
 						for (; id < self.channels; id++) {
-							self.transmit(id, 0, 0, 0, 1)
+							self.transmit(id, 0, 0, 0, 1);
 						}
+
 					}
 				} else {
 					self.log('clearing interval');
