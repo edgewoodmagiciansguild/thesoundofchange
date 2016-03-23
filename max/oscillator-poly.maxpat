@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 255.0, 134.0, 914.0, 564.0 ],
+		"rect" : [ 212.0, 95.0, 914.0, 564.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,18 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 77.0, 246.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
@@ -166,11 +178,11 @@
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 126.0, 68.0, 93.0, 22.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 126.0, 68.0, 123.0, 22.0 ],
 					"style" : "",
-					"text" : "OSC-route /osc"
+					"text" : "OSC-route /osc /year"
 				}
 
 			}
@@ -282,6 +294,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -372,12 +393,12 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-9::obj-77" : [ "getsamplelength", "getsamplelength", 0 ],
 			"obj-9::obj-52" : [ "Level", "Level", 0 ],
-			"obj-9::obj-73" : [ "Format", "Format", 0 ],
 			"obj-9::obj-7" : [ "AutoName", "AutoName", 0 ],
 			"obj-9::obj-74" : [ "Channels", "Channels", 0 ],
-			"obj-9::obj-76" : [ "Record", "Record", 0 ],
-			"obj-9::obj-77" : [ "getsamplelength", "getsamplelength", 0 ]
+			"obj-9::obj-73" : [ "Format", "Format", 0 ],
+			"obj-9::obj-76" : [ "Record", "Record", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -388,7 +409,7 @@
 			}
 , 			{
 				"name" : "oscillator-rect-filter-noise.maxpat",
-				"bootpath" : "~/Desktop/edgewoodmagicicansguild/thesoundofchange/max/externals",
+				"bootpath" : "~/Desktop/edgewoodmagiciansguild/thesoundofchange/max/externals",
 				"type" : "JSON",
 				"implicit" : 1
 			}
