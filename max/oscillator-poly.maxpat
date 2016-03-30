@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 250.0, 89.0, 997.0, 675.0 ],
+		"rect" : [ 34.0, 79.0, 1301.0, 685.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,108 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-30",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 638.5, 129.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 638.5, 167.0, 106.0, 22.0 ],
+					"style" : "",
+					"text" : "drunk 11820 1000"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-28",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 512.0, 97.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 512.0, 135.0, 107.0, 22.0 ],
+					"style" : "",
+					"text" : "drunk 18250 1000"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 261.0, 247.0, 29.5, 22.0 ],
+					"style" : "",
+					"text" : "1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"data" : 					{
+						"clips" : [ 							{
+								"filename" : "Clap 01.wav",
+								"filekind" : "audiofile",
+								"loop" : 0,
+								"content_state" : 								{
+									"followglobaltempo" : [ 0 ],
+									"mode" : [ "basic" ],
+									"play" : [ 0 ],
+									"quality" : [ "basic" ],
+									"pitchcorrection" : [ 0 ],
+									"formantcorrection" : [ 0 ],
+									"speed" : [ 1.0 ],
+									"pitchshift" : [ 1.0 ],
+									"slurtime" : [ 0.0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"formant" : [ 1.0 ],
+									"basictuning" : [ 440 ],
+									"originaltempo" : [ 120.0 ],
+									"timestretch" : [ 0 ],
+									"originallengthms" : [ 0.0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"id" : "obj-9",
+					"maxclass" : "playlist~",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
+					"patching_rect" : [ 274.0, 288.0, 150.0, 30.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-50",
 					"maxclass" : "number",
@@ -118,7 +220,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 547.0, 348.0, 95.0, 22.0 ],
+					"patching_rect" : [ 1153.0, 533.0, 95.0, 22.0 ],
 					"style" : "",
 					"text" : "open snd.aif aiff"
 				}
@@ -132,7 +234,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 481.0, 398.0, 24.0, 24.0 ],
+					"patching_rect" : [ 1087.0, 583.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -156,7 +258,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 556.0, 446.0, 71.0, 22.0 ],
+					"patching_rect" : [ 1162.0, 631.0, 71.0, 22.0 ],
 					"style" : "",
 					"text" : "sfrecord~ 2"
 				}
@@ -233,7 +335,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 23.0, 208.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1860."
+					"text" : "1850."
 				}
 
 			}
@@ -257,7 +359,7 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 620.0, 156.0, 111.0, 22.0 ],
+					"patching_rect" : [ 638.5, 208.0, 111.0, 22.0 ],
 					"style" : "",
 					"text" : "scale 0 11820 1. 0."
 				}
@@ -270,7 +372,7 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 515.0, 111.0, 112.0, 22.0 ],
+					"patching_rect" : [ 512.0, 163.0, 112.0, 22.0 ],
 					"style" : "",
 					"text" : "scale 0 18250 0. 1."
 				}
@@ -296,7 +398,7 @@
 					"numinlets" : 6,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 474.0, 233.0, 253.0, 22.0 ],
+					"patching_rect" : [ 463.0, 398.0, 253.0, 22.0 ],
 					"style" : "",
 					"text" : "poly~ oscillator-rect-filter-noise 200 @target 0"
 				}
@@ -309,7 +411,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 387.5, 181.0, 58.0, 22.0 ],
+					"patching_rect" : [ 399.5, 181.0, 58.0, 22.0 ],
 					"style" : "",
 					"text" : "target $1"
 				}
@@ -360,7 +462,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 572.0, 273.0, 45.0, 45.0 ],
+					"patching_rect" : [ 562.0, 489.0, 45.0, 45.0 ],
 					"style" : ""
 				}
 
@@ -458,6 +560,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -476,6 +587,33 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-26", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 5 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -489,6 +627,24 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-31", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-30", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-31", 0 ]
 				}
 
 			}
@@ -575,19 +731,10 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
+					"destination" : [ "obj-28", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-5", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-13", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-5", 3 ]
 				}
 
 			}
@@ -597,6 +744,15 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-5", 3 ]
 				}
 
 			}
@@ -636,11 +792,26 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "oscillator-rect-filter-noise.maxpat",
 				"bootpath" : "~/Desktop/edgewoodmagicicansguild/thesoundofchange/max/externals",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "Clap 01.wav",
+				"bootpath" : "C74:/packages/MaxIntroLessons/media",
+				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
