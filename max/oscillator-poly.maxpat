@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1005.0, 685.0 ],
+		"rect" : [ 34.0, 79.0, 1298.0, 685.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -557,7 +557,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 23.0, 208.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1896."
+					"text" : "1932."
 				}
 
 			}
@@ -768,6 +768,7 @@
 					"destination" : [ "obj-24", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 564.5, 474.0, 657.25, 474.0 ],
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -895,6 +896,7 @@
 					"destination" : [ "obj-24", 3 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 678.0, 474.0, 689.75, 474.0 ],
 					"source" : [ "obj-27", 0 ]
 				}
 
@@ -968,6 +970,7 @@
 					"destination" : [ "obj-24", 2 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 618.5, 474.0, 673.5, 474.0 ],
 					"source" : [ "obj-34", 0 ]
 				}
 
@@ -996,6 +999,7 @@
 					"destination" : [ "obj-24", 4 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 732.0, 474.0, 706.0, 474.0 ],
 					"source" : [ "obj-36", 0 ]
 				}
 
@@ -1050,6 +1054,7 @@
 					"destination" : [ "obj-27", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 292.25, 348.0, 480.0, 348.0, 480.0, 297.0, 678.0, 297.0 ],
 					"source" : [ "obj-40", 1 ]
 				}
 
@@ -1059,6 +1064,7 @@
 					"destination" : [ "obj-34", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 259.5, 348.0, 480.0, 348.0, 480.0, 297.0, 618.5, 297.0 ],
 					"source" : [ "obj-40", 0 ]
 				}
 
@@ -1186,6 +1192,7 @@
 					"destination" : [ "obj-24", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
+					"midpoints" : [ 505.0, 474.0, 641.0, 474.0 ],
 					"source" : [ "obj-8", 0 ]
 				}
 
