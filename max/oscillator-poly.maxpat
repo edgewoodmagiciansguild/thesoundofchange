@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1298.0, 685.0 ],
+		"rect" : [ 34.0, 79.0, 1002.0, 685.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -83,7 +83,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 250.0, 225.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1"
+					"text" : "2"
 				}
 
 			}
@@ -582,7 +582,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 23.0, 208.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1976."
+					"text" : "1861."
 				}
 
 			}
