@@ -38,6 +38,69 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"clipheight" : 29.0,
+					"data" : 					{
+						"clips" : [ 							{
+								"filename" : "/Users/hyxf/Desktop/edgewoodmagicicansguild/thesoundofchange/max/loops/drums1.aif",
+								"filekind" : "audiofile",
+								"loop" : 1,
+								"content_state" : 								{
+									"quality" : [ "basic" ],
+									"followglobaltempo" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"pitchshift" : [ 1.0 ],
+									"slurtime" : [ 0.0 ],
+									"pitchcorrection" : [ 0 ],
+									"originaltempo" : [ 120.0 ],
+									"mode" : [ "basic" ],
+									"timestretch" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"play" : [ 0 ],
+									"speed" : [ 1.0 ],
+									"formantcorrection" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"basictuning" : [ 440 ]
+								}
+
+							}
+, 							{
+								"filename" : "/Users/hyxf/Desktop/edgewoodmagicicansguild/thesoundofchange/max/loops/drums2.aif",
+								"filekind" : "audiofile",
+								"loop" : 1,
+								"content_state" : 								{
+									"quality" : [ "basic" ],
+									"followglobaltempo" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"pitchshift" : [ 1.0 ],
+									"slurtime" : [ 0.0 ],
+									"pitchcorrection" : [ 0 ],
+									"originaltempo" : [ 120.0 ],
+									"mode" : [ "basic" ],
+									"timestretch" : [ 0 ],
+									"formant" : [ 1.0 ],
+									"play" : [ 0 ],
+									"speed" : [ 1.0 ],
+									"formantcorrection" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ],
+									"basictuning" : [ 440 ]
+								}
+
+							}
+ ]
+					}
+,
+					"id" : "obj-40",
+					"maxclass" : "playlist~",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
+					"patching_rect" : [ 250.0, 276.0, 150.0, 60.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-36",
 					"maxclass" : "gain~",
 					"numinlets" : 1,
@@ -45,7 +108,6 @@
 					"outlettype" : [ "signal", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 722.5, 310.0, 22.0, 140.0 ],
-					"presentation_rect" : [ 1131.0, 199.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -59,7 +121,6 @@
 					"outlettype" : [ "signal", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 668.5, 310.0, 22.0, 140.0 ],
-					"presentation_rect" : [ 1081.5, 196.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -72,7 +133,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 635.0, 415.0, 29.5, 22.0 ],
-					"presentation_rect" : [ 1048.0, 301.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "$1"
 				}
@@ -87,7 +147,6 @@
 					"outlettype" : [ "signal", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 609.0, 310.0, 22.0, 140.0 ],
-					"presentation_rect" : [ 1022.0, 196.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -459,7 +518,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 23.0, 208.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1844."
+					"text" : "1878."
 				}
 
 			}
@@ -922,6 +981,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-27", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-40", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-34", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-40", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1050,6 +1127,18 @@
 				"name" : "Clap 01.wav",
 				"bootpath" : "C74:/packages/MaxIntroLessons/media",
 				"type" : "WAVE",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "drums1.aif",
+				"bootpath" : "~/Desktop/edgewoodmagicicansguild/thesoundofchange/max/loops",
+				"type" : "AIFF",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "drums2.aif",
+				"bootpath" : "~/Desktop/edgewoodmagicicansguild/thesoundofchange/max/loops",
+				"type" : "AIFF",
 				"implicit" : 1
 			}
 , 			{
