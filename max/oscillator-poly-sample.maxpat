@@ -545,9 +545,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1153.0, 533.0, 95.0, 22.0 ],
+					"patching_rect" : [ 1153.0, 533.0, 37.0, 22.0 ],
 					"style" : "",
-					"text" : "open snd.aif aiff"
+					"text" : "open"
 				}
 
 			}
@@ -660,7 +660,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 23.0, 208.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1870."
+					"text" : "1904."
 				}
 
 			}
