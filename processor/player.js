@@ -96,8 +96,6 @@ var player = _.bindAll({
 					var data = self.playStack.shift(),
 						id = 0;
 
-					console.log(data);
-
 					if (data !== undefined) {
 						for (i in data) {
 							var val = null,
