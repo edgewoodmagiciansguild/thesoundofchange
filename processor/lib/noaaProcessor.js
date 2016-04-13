@@ -151,18 +151,18 @@ var noaaXmlProcessor = _.bindAll({
 		return next(chain);
 	},
 
-	processFile: function (path) {
+	processFile: function (fpath) {
 		var self = this;
 
 		return new Promise(function(resolve, reject) {
-			var input = fs.createReadStream(path),
+			var input = fs.createReadStream(fpath),
 				reader = readline.createInterface({
 					input: input
 				}),
 				data = {},
 				lastId = null;
 
-			self.log('processing ' + path);
+			self.log('processing ' + path.basename(fpath));
 
 			reader.on('line', function (line) {
 				var station = line.substr(0, 11),
