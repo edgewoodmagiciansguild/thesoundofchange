@@ -8,7 +8,7 @@ var _ = require('lodash'),
 	readline = require('readline'),
 	Promise = require('bluebird');
 
-var noaaXmlProcessor = _.bindAll({
+var noaaProcessor = _.bindAll({
 
 	path: app.config.noaa.dataDir,
 	dailyPath: 'data/ghcnd_gsn',
@@ -22,9 +22,9 @@ var noaaXmlProcessor = _.bindAll({
 	init: function() {
 		var self = this;
 
-		self.log = app.logger.create('noaaXmlProcessor');
-		self.error = app.logger.create('noaaXmlProcessor', 'error');
-		self.warn = app.logger.create('noaaXmlProcessor', 'warn');
+		self.log = app.logger.create('noaaProcessor');
+		self.error = app.logger.create('noaaProcessor', 'error');
+		self.warn = app.logger.create('noaaProcessor', 'warn');
 
 		self.log('init');
 
@@ -224,6 +224,6 @@ var noaaXmlProcessor = _.bindAll({
 
 });
 
-app.on('app:start', noaaXmlProcessor.init);
+app.on('app:start', noaaProcessor.init);
 
-module.exports = noaaXmlProcessor;
+module.exports = noaaProcessor;
