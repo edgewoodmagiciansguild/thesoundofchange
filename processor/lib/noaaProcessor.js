@@ -16,6 +16,9 @@ var noaaXmlProcessor = _.bindAll({
 	pattern: new RegExp('^.+\.dly$', 'i'),
 	files: [],
 
+	isPaused: false,
+	resume: null,
+
 	init: function() {
 		var self = this;
 
@@ -39,6 +42,25 @@ var noaaXmlProcessor = _.bindAll({
 				});
 			});
 		});
+
+		app.on('noaa:pause', self.pause);
+		app.on('noaa:resume', self.resume);
+	},
+
+	pause: function () {
+		this.isPaused = true;
+	},
+
+	resume: function () {
+		var r = this.resume;
+
+		if (r != null) {
+			this.log('resuming');
+			this.isPaused = false;
+			this.resume = null;
+
+			r();
+		}
 	},
 
 	processStations: function (path) {
@@ -82,6 +104,10 @@ var noaaXmlProcessor = _.bindAll({
 			});
 
 			reader.on('close', function () {
+				input.destroy();
+				delete input;
+				delete reader;
+
 				resolve(stations);
 			});
 		});
@@ -111,13 +137,18 @@ var noaaXmlProcessor = _.bindAll({
 
 	processFiles: function () {
 		var self = this,
-			chain = [];
+			chain = Promise.cast();
 
-		for (var i in self.files) {
-			chain.push(self.processFile(self.files[i]));
+		function next(chain) {
+			return chain.then(function () {
+				if (self.files.length > 0) {
+					file = self.files.shift();
+					return next(self.processFile(file));
+				}
+			})
 		}
 
-		return Promise.all(chain);
+		return next(chain);
 	},
 
 	processFile: function (path) {
@@ -130,6 +161,8 @@ var noaaXmlProcessor = _.bindAll({
 				}),
 				data = {},
 				lastId = null;
+
+			self.log('processing ' + path);
 
 			reader.on('line', function (line) {
 				var station = line.substr(0, 11),
@@ -174,7 +207,17 @@ var noaaXmlProcessor = _.bindAll({
 			});
 
 			reader.on('close', function () {
-				resolve();
+				input.destroy();
+				delete input;
+				delete reader;
+
+				if (self.isPaused) {
+					self.log('paused');
+					self.resume = resolve;
+					app.emit('noaa:paused');
+				} else {
+					resolve();
+				}
 			});
 		});
 	}

@@ -32,11 +32,11 @@ var oscCatcher = _.bindAll({
 			remotePort: app.config.udpEmitter.port
 		};
 
-		self.oscPort = new osc.UDPPort(config);
-		self.oscPort.open();
+		//self.oscPort = new osc.UDPPort(config);
+		//self.oscPort.open();
 
-		app.on('noaa:data', self.catchData);
-		app.on('noaa:done', self.playData);
+		//app.on('noaa:data', self.catchData);
+		//app.on('noaa:done', self.playData);
 	},
 
 	catchData: function (station, data) {
@@ -155,7 +155,7 @@ var oscCatcher = _.bindAll({
 							address: '/activeVoices',
 							args: [Object.keys(data).length]
 						});
-						
+
 						for (; id < self.channels; id++) {
 							self.transmit(id, 0, 0, 0, 1);
 						}
