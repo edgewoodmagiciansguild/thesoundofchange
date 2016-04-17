@@ -98,17 +98,27 @@ var player = _.bindAll({
 
 					if (data !== undefined) {
 						for (i in data) {
-							var val = null,
-								year = data[i].day.split('-')[0] | 0; // not very defensive, but heck with it... KPR: needed an int, osc was sending a string without the cast
+							var tmpVal = null,
+								prcpVal = null,
+								snowVal = null,
+								year = parseInt(data[i].day.split('-')[0] || 0); // not very defensive, but heck with it... KPR: needed an int, osc was sending a string without the cast
 
 							if (data[i].TAVG !== undefined) {
-								val = data[i].TAVG.value;
+								tmpVal = data[i].TAVG.value;
 							} else if (data[i].TMIN !== undefined && data[i].TMAX) {
-								val = (data[i].TMIN.value + data[i].TMAX.value) / 2.0;
+								tmpVal = (data[i].TMIN.value + data[i].TMAX.value) / 2.0;
 							}
 
-							if (val != null) {
-								self.transmit(id, val, 0, 0, 0, year);
+							if (data[i].PRCP !== undefined) {
+								prcpVal = data[i].PRCP.value;
+							}
+
+							if (data[i].SNOW !== undefined) {
+								snowVal = data[i].SNOW.value;
+							}
+
+							if (tmpVal != null || prcpVal != null || snowVal != null) {
+								self.transmit(id, tmpVal, prcpVal, snowVal, 0, year);
 							} else {
 								self.transmit(id, 0, 0, 0, 1, year);
 							}
@@ -152,10 +162,10 @@ var player = _.bindAll({
 				delete year;
 			}
 
-			console.log(year + ': ' + oscillator + ' ' + temp);
+			console.log(year + ': ' + oscillator + ' ' + temp + ' ' + precip + ' ' + snowdepth);
 			this.oscPort.send({
 				address: '/osc',
-				args: [oscillator, temp, precip, snowdepth, mute]
+				args: [oscillator, temp || 'null', precip || 'null', snowdepth || 'null', mute]
 			});
 		}
 	},
